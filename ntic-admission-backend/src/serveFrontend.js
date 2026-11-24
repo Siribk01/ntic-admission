@@ -8,7 +8,7 @@ const express = require('express');
 function serveFrontend(app) {
   // Where "npm run build" in the front end puts its files. Override with FRONTEND_DIST if your folders differ.
     // path.resolve makes the path absolute, because res.sendFile refuses relative paths like ../ntic-portal/dist
-  const dist = path.resolve(process.env.FRONTEND_DIST || path.join(process.cwd(), '..', 'frontend', 'dist'));
+    const dist = path.resolve(process.env.FRONTEND_DIST || path.join(process.cwd(), '..', 'frontend', 'dist'));
   if (!fs.existsSync(path.join(dist, 'index.html'))) return;
 
   // Built files carry a hash in their name, so they can be kept by the browser for a long time
